@@ -39,8 +39,8 @@ _start:
     syscall
     test rax, rax       ; check if write was successful
     js .close_file      ; if negative, close the file
-    add r14, rax       ; move buffer pointer forward
-    sub r13, rax       ; decrease remaining bytes to write
+    add r14, rax        ; move buffer pointer forward
+    sub r13, rax        ; decrease remaining bytes to write
     jnz .write_loop     ; if not all bytes were written, try again
 
     jmp .read_loop      ; repeat the loop
