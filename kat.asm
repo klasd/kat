@@ -22,7 +22,7 @@ _start:
     mov rax, 0          ; syscall: read
     mov rdi, r12        ; file descriptor
     mov rsi, buffer     ; buffer
-    mov rdx, 1024       ; buffer size
+    mov rdx, 2048       ; buffer size
     syscall
     test rax, rax       ; check if end of file or error
     jle .close_file     ; if zero or negative, close the file
